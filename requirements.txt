@@ -1,0 +1,4 @@
+# for build frontend
+npm install
+npm init react-app
+npm install --save react-router-dom
