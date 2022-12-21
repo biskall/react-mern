@@ -43,7 +43,7 @@ const Input = (props) => {
     });
   };
 
-  const touchHandler = (event) => {
+  const touchHandler = () => {
     dispatch({
       type: "TOUCH"
     });
@@ -63,6 +63,7 @@ const Input = (props) => {
       <textarea
         id={props.id}
         rows={props.rows || 3}
+        onBlur={touchHandler}
         onChange={changeHandler}
         value={inputState.value}
       />
