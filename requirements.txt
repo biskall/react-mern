@@ -3,3 +3,6 @@ npm install
 npm init react-app
 npm install --save react-router-dom
 npm install --save react-transition-group
+pip install flask
+pip install mysql-connector-python
+pip install flask-cors
