@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import Card from "../../shared/components/UIElement/Card";
 import Button from "../../shared/components/FormElements/Button";
@@ -16,6 +16,18 @@ import "./Auth.css";
 const Auth = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);
   const auth = useContext(AuthContext)
+
+  useEffect(() => {
+    fetch('http://localhost:4000/incomes',{
+        'methods': 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err))
+  },[])
 
   const [formState, inputHandler, setFormData] = useForm(
     {

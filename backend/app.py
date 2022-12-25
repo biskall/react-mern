@@ -7,7 +7,7 @@ import mysql.connector
 
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 # 
 # class Person:
 #     def __init__(self, email, time):
@@ -15,14 +15,30 @@ app = Flask(__name__)
 #         self.time = time
 
 incomes = [
-    { 'description': 'salary', 'amount': 5000 }
+    { 'id':'1' ,'description': 'salary', 'amount': 5000 },
+    { 'id':'2' ,'description': 'salary', 'amount': 2000 },
+    { 'id':'3' ,'description': 'salary', 'amount': 3000 }
 ]
 
 
-@app.route('/incomes')
+def find_obj(arr, key):
+    for x in arr:
+        if x.get('id') == key:
+            return x
+    return None
+
+
+@app.route('/incomes', methods=['GET'])
 def get_incomes():
     print('1')
     return jsonify(incomes)
+
+@app.route('/incomes/<id>', methods=['GET'])
+def post_incomes(id):
+    print(id)
+    incomes_item = find_obj(incomes,id)
+    print(incomes_item)
+    return jsonify(incomes_item)
 
 
 @app.route('/incomes', methods=['POST'])
@@ -38,4 +54,4 @@ def index():
     return "hello world 2222"
 
 # mydb = openDB()    
-app.run(host='0.0.0.0', port=4000)
+app.run(host='0.0.0.0', port=4000, debug=True)
