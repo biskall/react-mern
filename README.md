@@ -1,2 +1,2 @@
 # mern_react
-react (frontend) + node.js (backend) + mongodb (DB)
+react (frontend) + python (backend) + mongodb (DB)
