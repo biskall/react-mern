@@ -14,6 +14,7 @@ import Users from "./user/pages/Users";
 import UserPlaces from "./places/pages/UserPlaces";
 import NewPlace from "./places/pages/NewPlace";
 import Auth from "./user/pages/Auth";
+import Charts from "./charts/Charts";
 import { AuthContext } from "./shared/components/context/auth-context";
 
 const App = () => {
@@ -58,6 +59,9 @@ const App = () => {
         </Route>
         <Route path="/auth">
           <Auth></Auth>
+        </Route>
+        <Route path="/charts" exact>
+          <Charts></Charts>
         </Route>
         <Redirect to="/auth"/>
       </Switch>

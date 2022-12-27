@@ -6,3 +6,4 @@ npm install --save react-transition-group
 pip install flask
 pip install mysql-connector-python
 pip install flask-cors
+npm install --save chart.js react-chartjs-2

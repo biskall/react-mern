@@ -11,6 +11,9 @@ const NavLinks = props => {
     <li>
         <NavLink to="/" exact>ALL USERS</NavLink>
     </li>
+    <li>
+        <NavLink to="/charts" exact>GRAPH</NavLink>
+    </li>
     {auth.isLoggedIn &&
      <li>
         <NavLink to="/u1/places">MY PLACES</NavLink>
